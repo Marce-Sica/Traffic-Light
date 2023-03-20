@@ -1,26 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import "../../styles/index.css"
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+const Click = () => {
+	const[color, setColor] = useState("")
+
+	useEffect(()=>{console.log(color)},[color])
+
+  return (<>
+      <h1 className="">Traffic Light</h1>
+     
+          <div className={"rounded-circle " + `red-light` + `${color==="rounded-circle red-light"? " red-light-active" : ""}`} onClick={(e)=>{setColor(e.target.className)}}></div> 
+		  <br/>
+          <div className={"rounded-circle " + `yellow-light` + `${color==="rounded-circle yellow-light"? " yellow-light-active" : ""}`} onClick={(e)=>{setColor(e.target.className)}}></div> 
+		  <br/>
+          <div className={"rounded-circle " + `green-light` + `${color==="rounded-circle green-light"? " green-light-active" : ""}`} onClick={(e)=>{setColor(e.target.className)}}></div>
+        
+      </>
+    
+  );
 };
 
-export default Home;
+export default Click;
