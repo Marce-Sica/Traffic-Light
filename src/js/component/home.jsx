@@ -11,7 +11,7 @@ const Click = () => {
 
   return (<>
     <h1>Traffic Light</h1>
-    <div className="ligths">
+    <div className="lights">
       <div className={"rounded-circle " + `red-light` + `${color === "rounded-circle red-light" ? " red-light-active" : ""}`} onClick={(e) => { setColor(e.target.className) }}></div>
       <br />
       <div className={"rounded-circle " + `yellow-light` + `${color === "rounded-circle yellow-light" ? " yellow-light-active" : ""}`} onClick={(e) => { setColor(e.target.className) }}></div>
